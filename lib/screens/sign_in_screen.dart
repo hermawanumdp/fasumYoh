@@ -80,7 +80,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   _isLoading
                       ? const CircularProgressIndicator()
                       : ElevatedButton(
-                        onPressed: () => _signIn,
+                        onPressed: _signIn,
                         child: const Text('Sign In'),
                       ),
                   const SizedBox(height: 16.0),
