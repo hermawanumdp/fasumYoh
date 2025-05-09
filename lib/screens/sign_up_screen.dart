@@ -137,25 +137,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         onPressed: _signUp,
                         child: const Text('Sign Up'),
                       ),
-                  // ElevatedButton(
-                  //   onPressed: () async {
-                  //     try {
-                  //       await FirebaseAuth.instance
-                  //           .createUserWithEmailAndPassword(
-                  //             email: _emailController.text,
-                  //             password: _passwordController.text,
-                  //           );
-                  //       Navigator.of(context).pushReplacement(
-                  //         MaterialPageRoute(
-                  //           builder: (context) => const HomeScreen(),
-                  //         ),
-                  //       );
-                  //     } catch (error) {
-                  //       print(error.toString());
-                  //     }
-                  //   },
-                  //   child: const Text('Sign Up'),
-                  // ),
                 ],
               ),
             ),
@@ -220,5 +201,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
       default:
         return 'An error occurred. Please try again.';
     }
+  }
+
+  @override
+  void dispose() {
+    _fullNameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    super.dispose();
   }
 }
